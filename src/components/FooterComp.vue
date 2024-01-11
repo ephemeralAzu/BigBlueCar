@@ -24,7 +24,7 @@ footer{
     background-color: #cfcece;
     display: flex;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 0 2%;
     h1{
         color: #23272e;
         font-family: "Exo 2";  

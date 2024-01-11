@@ -11,7 +11,6 @@ export default {
     },
 }
 </script>
-
 <template>
 <header>
     <router-link to="/"><img src="../assets/images/bbcLogo.png" alt="BigBlueCar" class="logo"></router-link>
@@ -31,14 +30,14 @@ export default {
     </div>
 </header>
     <div class="profile-actioner" v-if="actioner">
-        <div class="actioner-select">
+        <router-link to="/auth" class="actioner-select">
             <h2>Вход</h2>
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g color="var(--_1gzv7bhc)"><path fill="currentColor" fill-rule="evenodd" d="M8.29289 6.70711c-.39052-.39053-.39052-1.02369 0-1.41422.39053-.39052 1.02369-.39052 1.41422 0l5.99999 6.00001c.3905.3905.3905 1.0237 0 1.4142l-5.99999 6c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142L13.5858 12 8.29289 6.70711Z" clip-rule="evenodd" transform="rotate(0 12 12)"></path></g></svg>
-        </div>
-        <div class="actioner-select">
+        </router-link>
+        <router-link to="/auth" class="actioner-select">
             <h2>Регистрация</h2>
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g color="var(--_1gzv7bhc)"><path fill="currentColor" fill-rule="evenodd" d="M8.29289 6.70711c-.39052-.39053-.39052-1.02369 0-1.41422.39053-.39052 1.02369-.39052 1.41422 0l5.99999 6.00001c.3905.3905.3905 1.0237 0 1.4142l-5.99999 6c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142L13.5858 12 8.29289 6.70711Z" clip-rule="evenodd" transform="rotate(0 12 12)"></path></g></svg>
-        </div>
+        </router-link>
     </div>
 </template>
 
@@ -48,16 +47,17 @@ export default {
     flex-direction: column;
     position: absolute;
     align-items: center;
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(255, 255, 255);
     right: 15%;
     width: 23%;
     top: 70px;
-    z-index: -1;
+    z-index: 0;
     .actioner-select{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 95%;
+        width: 95%; 
+        text-decoration: none;
         h2{
             color: #23272e;
             font-family: "Exo 2";
@@ -66,9 +66,12 @@ export default {
             width: 35px;
             height: 35px;
             margin-right: 8px;
+            color: rgb(80, 80, 80);
+            
         }
     }
 }
+
 header{
     height: 70px;
     padding: 0 15%;
@@ -89,6 +92,7 @@ header{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            cursor: pointer;
             svg{
                 width: 30px;
                 height: 30px;

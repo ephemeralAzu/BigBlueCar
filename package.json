@@ -11,8 +11,11 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "ajax": "^0.0.4",
+    "axios": "^1.6.5",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",
+    "scss": "^0.2.4",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
   },

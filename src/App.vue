@@ -7,9 +7,12 @@ import FooterComp from './components/FooterComp.vue';
 <template>
   <HeaderComp/>
   <RouterView />
-  <FooterComp />
+  <FooterComp class="footer"/>
 </template>
 
-<style>
-
+<style scoped lang="scss">
+.footer{
+  margin-top: 150px;
+  width: 96%;
+}
 </style>
