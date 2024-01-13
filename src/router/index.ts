@@ -13,6 +13,16 @@ const router = createRouter({
       path: '/auth',
       name: 'Аутентификация',
       component: () => import('../views/AuthView.vue')
+    },
+    {
+      path: '/find',
+      name: 'Найти попутку',
+      component: () => import('../views/FindView.vue')
+    },
+    {
+      path: '/create',
+      name: 'Опубликовать поездку',
+      component: () => import('../views/FindView.vue')
     }
   ]
 })

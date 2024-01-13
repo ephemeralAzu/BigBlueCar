@@ -3,7 +3,6 @@
 
 <template>
 <section class="find_section">
-<h1>Поездки на ваш выбор по самым низким ценам</h1>
 <div class="inputs">
     <div class="input_div" style="border-radius: 20px;">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" ><title>Откуда</title><g color="var(--_1gzv7bhc)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" fill="currentColor"></path></g></svg>
@@ -47,110 +46,61 @@
             пару минут найдет водителя поблизости, и вам останется нажать пару кнопок для брони.</h3>
     </div>
 </section>
-<section class="create_section">
-    <img src="../assets//images/driver-c3bdd70e6a29c6af9ef1.svg" alt="">
-    <div class="text_part">
-        <h1>Экономьте, когда вы за рулем</h1>
-        <h3>Зарегистрируйте профиль водителя, берите попутчиков и экономьте на бензине. 
-            Чтобы опубликовать первую поездку, нужно всего пару минут. Готовы ехать?</h3>
-            <router-link to="/create">Опубликовать поездку</router-link>
-    </div>
-</section>
+
 </template>
 
 <style scoped lang="scss">
 .find_section{
-   background-image: url("https://cdn.blablacar.com/kairos/assets/images/carpool_coral_bus_large-78022c0488061d145a65.svg");
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   height: 15vw;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   h1{
-        color: #ffffff;
-        font-family: "Exo 2"; 
-        font-size: 36px;
-   }
-    .inputs{
-        display: flex;
-        justify-content: center;
-        border-radius: 20px;
-        box-shadow: 0px 0px 8px 0px rgb(95, 95, 95);
-        .input_div{
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            .kirk-icon{
-                height: 30px;
-                color: #585858;
-            }
-        }
-        .input_number input{
-            width: 50%;
-        }
-        input{
-            outline: none;
-            border: none;
-            height: 50px;
-            color: #585858;
-            font-family: "Exo 2";
-            font-size: 20px;
-            font-weight: bold;
-        }
-        button{
-            border: none;
-            background-color: #00aeff;
-            color: white;
-            font-family: "Exo 2"; 
-            font-size: 24px;
-            width: 50%;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-            cursor: pointer;
-        }
-
-    }
-}
-.create_section{
+    height: 10vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    img{
-        width: 30%;
+    margin-top: 150px;
+    h1{
+         color: #ffffff;
+         font-family: "Exo 2"; 
+         font-size: 36px;
     }
-    .text_part{
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h1{
-            width: 100%;
-            margin: 0;
-            margin-bottom: 20px;
-            color: #23272e;
-            font-family: "Exo 2";
-        }
-        h3{
-            width: 100%;
-            margin: 0;
-            margin-bottom: 20px;
-            color: #23272e;
-            font-family: "Exo 2";
-        }
-        a{
-            padding: 15px 40px;
-            background-color: #00b7ff;
-            border-radius: 30px;
-            color: #ffffff;
-            font-family: "Exo 2";
-            text-decoration: none;
-            font-size: 18px;
-        }
-    }
-}
+     .inputs{
+         display: flex;
+         justify-content: center;
+         border-radius: 20px;
+         box-shadow: 0px 0px 8px 0px rgb(95, 95, 95);
+         .input_div{
+             display: flex;
+             align-items: center;
+             background-color: #fff;
+             .kirk-icon{
+                 height: 30px;
+                 color: #585858;
+             }
+         }
+         .input_number input{
+             width: 50%;
+         }
+         input{
+             outline: none;
+             border: none;
+             height: 50px;
+             color: #585858;
+             font-family: "Exo 2";
+             font-size: 20px;
+             font-weight: bold;
+         }
+         button{
+             border: none;
+             background-color: #00aeff;
+             color: white;
+             font-family: "Exo 2"; 
+             font-size: 24px;
+             width: 50%;
+             border-top-right-radius: 20px;
+             border-bottom-right-radius: 20px;
+             cursor: pointer;
+         }
+ 
+     }
+ }
 .params_section{
     display: flex;
     justify-content: center;
