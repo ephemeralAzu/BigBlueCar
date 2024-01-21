@@ -22,7 +22,7 @@ const router = createRouter({
     {
       path: '/create',
       name: 'Опубликовать поездку',
-      component: () => import('../views/FindView.vue')
+      component: () => import('../views/CreateView.vue')
     }
   ]
 })
