@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-
-
-
 </script>
 <script lang="ts">
 export default {
@@ -13,10 +8,7 @@ export default {
             actioner: false,
         }
     },
-    methods: {
-    },
 }
-
 </script>
 <template>
 <header>
@@ -30,16 +22,16 @@ export default {
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g color="#00AFF5"><path stroke-width="0" fill="#00AFF5" fill-rule="evenodd" d="M1.14 11.5a10.36 10.36 0 1120.72 0 10.36 10.36 0 01-20.72 0zM11.5 0a11.5 11.5 0 100 23 11.5 11.5 0 000-23zm.57 6.53a.57.57 0 00-1.14 0v4.4h-4.4a.57.57 0 100 1.14h4.4v4.4a.57.57 0 101.14 0v-4.4h4.4a.57.57 0 000-1.14h-4.4z"></path></g></svg>
             <router-link to="/create">Опубликовать поездку</router-link>
         </div>
-        <div class="header-profile" @click="actioner = !actioner" v-if="token == null" key="token">
+        <div class="header-profile" @click="actioner = !actioner" v-if="!$cookies.get('bbct')">
             <img src="https://cdn.blablacar.com/kairos/assets/images/signin-640a2bdb09c085fd1d8e.svg" alt="">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g color="var(--_1gzv7bhc)"><path fill="currentColor" fill-rule="evenodd" d="M8.29289 6.70711c-.39052-.39053-.39052-1.02369 0-1.41422.39053-.39052 1.02369-.39052 1.41422 0l5.99999 6.00001c.3905.3905.3905 1.0237 0 1.4142l-5.99999 6c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142L13.5858 12 8.29289 6.70711Z" clip-rule="evenodd" transform="rotate(90 12 12)"></path></g></svg>
         </div>
-        <div class="header-profile" v-if="token != null" key="token">
+        <router-link to="/profile" class="header-profile" v-if="$cookies.get('bbct')">
             <img src="https://cdn.blablacar.com/kairos/assets/images/signin-640a2bdb09c085fd1d8e.svg" alt="">
-        </div>
+        </router-link>
     </div>
 </header>
-    <div class="profile-actioner" v-if="actioner && token == null" @click="actioner = false" ref="target" @pointerleave="actioner = false">
+    <div class="profile-actioner" v-if="actioner && token == null" @click="actioner = false" @pointerleave="actioner = false">
         <router-link to="/auth" class="actioner-select">
             <h3>Вход</h3>
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g color="var(--_1gzv7bhc)"><path fill="currentColor" fill-rule="evenodd" d="M8.29289 6.70711c-.39052-.39053-.39052-1.02369 0-1.41422.39053-.39052 1.02369-.39052 1.41422 0l5.99999 6.00001c.3905.3905.3905 1.0237 0 1.4142l-5.99999 6c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142L13.5858 12 8.29289 6.70711Z" clip-rule="evenodd" transform="rotate(0 12 12)"></path></g></svg>

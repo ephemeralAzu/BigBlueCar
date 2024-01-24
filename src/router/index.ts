@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/create',
       name: 'Опубликовать поездку',
       component: () => import('../views/CreateView.vue')
+    },
+    {
+      path: '/profile',
+      name: 'Профиль',
+      component: () => import('../views/ProfileView.vue')
     }
   ]
 })

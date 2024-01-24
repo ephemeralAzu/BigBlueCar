@@ -1,27 +1,43 @@
 <script setup lang="ts">
-</script>
 
+</script>
+<script lang="ts">
+export default {
+    data() {
+        return {
+            token: this.$cookies.get("bbct"),
+        }
+    },
+    methods: {
+        
+    },
+    mounted() {
+        if(this.token == null){
+            this.$router.push("/auth");
+        }
+    },
+}
+</script>
 <template>
 <section class="find_section">
-<div class="inputs">
+<form class="inputs">
     <div class="input_div" style="border-radius: 20px;">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" ><title>Откуда</title><g color="var(--_1gzv7bhc)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" fill="currentColor"></path></g></svg>
-        <input type="text" placeholder="Откуда">
+        <input type="text" placeholder="Откуда" required>
     </div>
     <div class="input_div">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" ><title>Откуда</title><g color="var(--_1gzv7bhc)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" fill="currentColor"></path></g></svg>
-        <input type="text" placeholder="Куда">
+        <input type="text" placeholder="Куда" required>
     </div>
-    <div class="input_div">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" aria-hidden="true"><g color="var(--_1gzv7bhc)"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 4C5.34315 4 4 5.34315 4 7V8H20V7C20 5.34315 18.6569 4 17 4H7ZM3 8V9V17C3 19.2091 4.79086 21 7 21H17C19.2091 21 21 19.2091 21 17V9V8V7C21 4.79086 19.2091 3 17 3H7C4.79086 3 3 4.79086 3 7V8ZM17 20C18.6569 20 20 18.6569 20 17V9H4V17C4 18.6569 5.34315 20 7 20H17ZM7 11C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13C7.55228 13 8 12.5523 8 12C8 11.4477 7.55228 11 7 11ZM6 16C6 15.4477 6.44772 15 7 15C7.55228 15 8 15.4477 8 16C8 16.5523 7.55228 17 7 17C6.44772 17 6 16.5523 6 16ZM12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11ZM11 16C11 15.4477 11.4477 15 12 15C12.5523 15 13 15.4477 13 16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16ZM17 11C16.4477 11 16 11.4477 16 12C16 12.5523 16.4477 13 17 13C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11Z" fill="currentColor"></path></g></svg>
-        <input type="date">
+    <div class="input_div date_div">
+        <input type="date" required>
     </div>
     <div class="input_div input_number">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" aria-hidden="true"><g color="var(--_1gzv7bhc)"><path fill="currentColor" fill-rule="evenodd" d="M15.3348 7.41667c0 2.07071-1.6793 3.75003-3.75 3.75003-2.07072 0-3.75-1.67932-3.75-3.75003v-.83334c0-2.07071 1.67928-3.75 3.75-3.75 2.0707 0 3.75 1.67929 3.75 3.75v.83334Zm-8.33334 0C7.00146 9.94762 9.05385 12 11.5848 12c2.5309 0 4.5833-2.05238 4.5833-4.58333v-.83334C16.1681 4.05238 14.1157 2 11.5848 2 9.05385 2 7.00146 4.05238 7.00146 6.58333v.83334ZM20.3335 20.75v-1.7433c0-1.6904-1.1257-3.1725-2.7522-3.6154-2.0325-.5548-4.0791-.8913-5.9978-.8913-1.91873 0-3.96534.3365-5.99806.8914-1.6263.4428-2.75194 1.9249-2.75194 3.6153V20.75c0 .2301.18654.4167.41666.4167H19.9168c.2301 0 .4167-.1866.4167-.4167Zm-2.9714-4.5547c1.2631.344 2.1381 1.4959 2.1381 2.8114v1.3266H3.66683v-1.3266c0-1.3155.87493-2.4674 2.13781-2.8113 1.9672-.537 3.9441-.8621 5.77886-.8621 1.8347 0 3.8117.3251 5.7786.862Z" clip-rule="evenodd"></path></g></svg>
-        <input type="number">
+        <input type="number" min="1" max="4" required>
     </div>
     <button>Поиск</button>
-</div>
+</form>
 </section>
 <section class="params_section">
 
@@ -70,14 +86,28 @@
              display: flex;
              align-items: center;
              background-color: #fff;
+             width: 90%;
              .kirk-icon{
                  height: 30px;
                  color: #585858;
              }
          }
-         .input_number input{
-             width: 50%;
+         .date_div{
+            width: 20%;
+            input{
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+            }
          }
+         .date_div input::-webkit-calendar-picker-indicator{
+            height: 25px;
+            width: 25px;
+            margin-top: 7px;
+         }
+         .input_number{
+            width: 20%;
+        }
          input{
              outline: none;
              border: none;
@@ -86,6 +116,7 @@
              font-family: "Exo 2";
              font-size: 20px;
              font-weight: bold;
+             width: 90%;
          }
          button{
              border: none;

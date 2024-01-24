@@ -124,9 +124,8 @@ export default {
             return;
            }
            this.$cookies.set("bbct", resp, "60d")
-           console.log(resp);
-           await this.$router.push("/");
-           this.$forceUpdate();
+           await this.$router.push("/")
+           this.$router.go(0)
         })
         },
 
@@ -136,17 +135,14 @@ export default {
             user: this.log_user,
         }, {headers: {'Content-Type': 'multipart/form-data', 'Access-Control-Allow-Origin': '*'}})
         .then(async (response)=> {
-            let resp = response.data
-            console.log(resp);
-            
+            let resp = response.data    
            if(resp == "err_incorrect"){
             this.loginError()
             return;
            }
            this.$cookies.set("bbct", resp, "60d")
-           console.log(resp);
-           await this.$router.push("/");
-           this.$forceUpdate();
+           await this.$router.push("/")
+           this.$router.go(0)
         })
         }
     },
