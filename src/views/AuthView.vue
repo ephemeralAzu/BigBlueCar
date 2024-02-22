@@ -220,13 +220,13 @@ export default {
         button{
             padding: 10px 15px;
             margin: 0;
-            color: #23272e;
+            color: #ffffff;
             font-family: "Exo 2"; 
             font-size: 24px;
             font-weight: bold;
             outline: none;
             border: none;
-            background-color: #8cd1ff;
+            background-color: #007221;
             border-radius: 10px;
             box-shadow: 0 0 8px 0 rgb(129, 129, 129);
             cursor: pointer;
@@ -256,7 +256,7 @@ export default {
             font-size: 36px;
         }
         h2{
-            color: #6797eb;
+            color: #00972b;
             font-family: "Exo 2"; 
             font-size: 36px;
             margin: 0 5px;

@@ -11,33 +11,39 @@ export default {
     methods: {
         
     },
-    mounted() {
-        if(this.token == null){
-            this.$router.push("/auth");
-        }
-    },
+    // mounted() {
+    //     if(this.token == null){
+    //         this.$router.push("/auth");
+    //     }
+    // },
 }
 </script>
 <template>
-<section class="find_section">
-<form class="inputs">
+    <section class="find_section">
+        <h1 class="input_text">Поездки на ваш выбор по самым низким ценам</h1>
+<div class="inputs">
     <div class="input_div" style="border-radius: 20px;">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" ><title>Откуда</title><g color="var(--_1gzv7bhc)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" fill="currentColor"></path></g></svg>
-        <input type="text" placeholder="Откуда" required>
+        <input type="text" placeholder="Откуда">
     </div>
     <div class="input_div">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" ><title>Откуда</title><g color="var(--_1gzv7bhc)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" fill="currentColor"></path></g></svg>
-        <input type="text" placeholder="Куда" required>
+        <input type="text" placeholder="Куда">
     </div>
     <div class="input_div date_div">
-        <input type="date" required>
+        <input type="date">
     </div>
     <div class="input_div input_number">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon" role="img" aria-hidden="true"><g color="var(--_1gzv7bhc)"><path fill="currentColor" fill-rule="evenodd" d="M15.3348 7.41667c0 2.07071-1.6793 3.75003-3.75 3.75003-2.07072 0-3.75-1.67932-3.75-3.75003v-.83334c0-2.07071 1.67928-3.75 3.75-3.75 2.0707 0 3.75 1.67929 3.75 3.75v.83334Zm-8.33334 0C7.00146 9.94762 9.05385 12 11.5848 12c2.5309 0 4.5833-2.05238 4.5833-4.58333v-.83334C16.1681 4.05238 14.1157 2 11.5848 2 9.05385 2 7.00146 4.05238 7.00146 6.58333v.83334ZM20.3335 20.75v-1.7433c0-1.6904-1.1257-3.1725-2.7522-3.6154-2.0325-.5548-4.0791-.8913-5.9978-.8913-1.91873 0-3.96534.3365-5.99806.8914-1.6263.4428-2.75194 1.9249-2.75194 3.6153V20.75c0 .2301.18654.4167.41666.4167H19.9168c.2301 0 .4167-.1866.4167-.4167Zm-2.9714-4.5547c1.2631.344 2.1381 1.4959 2.1381 2.8114v1.3266H3.66683v-1.3266c0-1.3155.87493-2.4674 2.13781-2.8113 1.9672-.537 3.9441-.8621 5.77886-.8621 1.8347 0 3.8117.3251 5.7786.862Z" clip-rule="evenodd"></path></g></svg>
-        <input type="number" min="1" max="4" required>
+        <input type="number" min="1" max="4">
     </div>
     <button>Поиск</button>
-</form>
+</div>
+<div class="about_us">
+    <h1>Point2Point работает по принципу «совместного использования автомобиля». </h1>
+    <h1>Водители публикуют информацию о своем маршруте. </h1>
+    <h1>Пассажиры могут найти подходящий маршрут и связаться с водителем для бронирования места.</h1>
+</div>
 </section>
 <section class="params_section">
 
@@ -66,76 +72,98 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.input_text{
+    color: #117400;
+    font-family: "Exo 2"; 
+    font-size: 36px;
+    width: 70%;
+    margin-top: 40px;
+    text-align: center;
+}
+.about_us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 50px;
+    h1{
+        color: #117400;
+        font-family: "Exo 2"; 
+        font-size: 24px;
+        width: 70%;
+        margin: 0;
+        text-align: center;
+   }
+}
 .find_section{
-    height: 10vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 15vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
-    h1{
-         color: #ffffff;
-         font-family: "Exo 2"; 
-         font-size: 36px;
-    }
-     .inputs{
-         display: flex;
-         justify-content: center;
-         border-radius: 20px;
-         box-shadow: 0px 0px 8px 0px rgb(95, 95, 95);
-         .input_div{
-             display: flex;
-             align-items: center;
-             background-color: #fff;
-             width: 90%;
-             .kirk-icon{
-                 height: 30px;
-                 color: #585858;
-             }
-         }
-         .date_div{
-            width: 20%;
-            input{
-                display: flex;
-                flex-direction: row-reverse;
-                align-items: center;
-            }
-         }
-         .date_div input::-webkit-calendar-picker-indicator{
-            height: 25px;
-            width: 25px;
-            margin-top: 7px;
-         }
-         .input_number{
-            width: 20%;
-        }
-         input{
-             outline: none;
-             border: none;
-             height: 50px;
-             color: #585858;
-             font-family: "Exo 2";
-             font-size: 20px;
-             font-weight: bold;
-             width: 90%;
-         }
-         button{
-             border: none;
-             background-color: #00aeff;
-             color: white;
-             font-family: "Exo 2"; 
-             font-size: 24px;
-             width: 50%;
-             border-top-right-radius: 20px;
-             border-bottom-right-radius: 20px;
-             cursor: pointer;
-         }
  
+    .inputs{
+     display: flex;
+     justify-content: center;
+     border-radius: 20px;
+     box-shadow: 0px 0px 8px 0px rgb(95, 95, 95);
+     .input_div{
+         display: flex;
+         align-items: center;
+         background-color: #fff;
+         width: 90%;
+         .kirk-icon{
+             height: 30px;
+             color: #585858;
+         }
      }
+     .date_div{
+        width: 20%;
+        input{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+     }
+     .date_div input::-webkit-calendar-picker-indicator{
+        height: 25px;
+        width: 25px;
+        margin-top: 7px;
+     }
+     .input_number{
+        width: 20%;
+    }
+     input{
+         outline: none;
+         border: none;
+         height: 50px;
+         color: #585858;
+         font-family: "Exo 2";
+         font-size: 20px;
+         font-weight: bold;
+         width: 90%;
+     }
+     button{
+         border: none;
+         background-color: #117400;
+         color: white;
+         font-family: "Exo 2"; 
+         font-size: 24px;
+         width: 50%;
+         border-top-right-radius: 20px;
+         border-bottom-right-radius: 20px;
+         cursor: pointer;
+     }
+ 
  }
-.params_section{
+ }
+ .params_section{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 100px;
     .param{
         display: flex;
         flex-direction: column;
@@ -143,18 +171,19 @@ export default {
         justify-content: start;
         width: 20%;
         margin: 20px;
-        .kirk-icon{
+        svg{
             height: 50px;
             width: 50px;
+            color: #072F00;
         }
         h2{
             margin: 0;
-            color: #23272e;
+            color: #0c4e00;
             font-family: "Exo 2";
         }
         h3{
             margin: 0;
-            color: #818181;
+            color: #148300;
             font-family: "Exo 2";
         }
     }
